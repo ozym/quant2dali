@@ -1,0 +1,67 @@
+.\"$Id: quant2dali.man 4486 2011-05-09 02:12:20Z chadwick $
+.TH QUANT2DALI 1 "7 May 2011" "Q330 DATALINK CLIENT"
+.SH NAME
+quant2dali - datalink client to import Q330 datalogger data and optionally archive the mini-seed packets
+.SH SYNOPSIS
+.B "sl330"
+[-hv]
+[-i\ \fIid\fP]
+[-d\ \fIdeadtime\fP]
+[-k\ \fItimeout\fP]
+[-n\ \fIattempts\fP]
+[-x\ \fIcontinuity\fP]
+[-f\ \fIformat\fP]
+[-d\ \fIdeadtime\fP]
+[-f\ \fIformat\fP]
+[<\fIserver\fP>]
+.SH DESCRIPTION
+.PP
+The datalink (ringserver) client
+.I sl330
+connects to a remote Quanterra Q330 and requests raw data streams using the miniseed packet method.
+.SH OPTIONS
+.TP 5
+.B "-h --help"
+provide usage help
+.TP 5
+.B "-v --verbose"
+run program in verbose mode, multiple flags increase the amount of noise
+.TP 5
+.B "-c --config \fIfile\fP"
+provide a configuration file containing the q330 connection details \fB[q330.xml]\fP
+.\".TP 5
+.\".B "-i --id \fIid\fP"
+.\"provide the config file lookup id tag to use \fB[Q330]\fP
+.TP 5
+.B "-k --timeout \fIseconds\fP"
+provide an alternate Q330 registration timeout \fB[120]\fP
+.TP 5
+.B "-d --deadtime \fIseconds\fP"
+provide a timeout after which the program will stop if no data has been received \fB[3600]\fP
+.TP 5
+.B "-n --attempts \fIcount\fP"
+provide an alternate number of Q330 registration attempts before giving up \fI5\fP
+.TP 5
+.B "-x --continuity \fIfile\fP"
+provide a continuity file to avoid missing data on Q330 reconnections
+.TP 5
+.B "-f --format \fItemplate\fP"
+provide a template for archiving the raw mini-seed data
+.SH USAGE
+This routine connects to a remote Quanttera Q330 logical port and
+recovers any waiting data, it then optionally sends the resulting miniseed blocks to
+a datalink server (e.g. \fIringserver\fP) or storing it via a template based on the
+\fIdataselect\fP tool from IRIS.
+.\".SH CONFIG
+.\"The XML structured config file is expected have a base tag of
+.\"\fIdatalink\fP with subtags of \fIq330\fP. Each subtag will have
+.\"an \fIid\fP property which needs to match that given on the command-line.
+.\"Required properties are \fIserial\fP, for the q330 long serial number, \fIipaddr\fP,
+.\"for the remote IP address, and optional tags include \fIauth\fP for the authorization
+.\"code \fB[0x00]\fP and \fIlport\fP the logical port \fB[4]\fP.
+.SH SEE ALSO
+lib330, libmseed, libdali, dataselect
+.SH AUTHOR
+Mark Chadwick
+.SH COPYRIGHT
+Copyright 2011 Geological \& Nuclear Sciences (GNS Science) Ltd.
