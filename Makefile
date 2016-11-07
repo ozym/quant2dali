@@ -24,7 +24,7 @@ Q330_SRCS = $(Q330_FILES:%.c=lib330/%.c)
 Q330_OBJS = $(Q330_FILES:%.c=lib330/%.o)
 
 LDFLAGS =
-LDLIBS = -ldali -lslink -lmseed -lpthread -lnsl -lrt -lm -lc
+LDLIBS = -ldali -lslink -lmseed -lpthread -lrt -lm -lc
 
 all: quant2dali
 
