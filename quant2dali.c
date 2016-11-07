@@ -22,8 +22,6 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $Id: quant2dali.c 4486 2011-05-09 02:12:20Z chadwick $
- *
  */
 
 /* system includes */
@@ -74,7 +72,7 @@
 
 /* program variables */
 static char *program_name = PACKAGE_NAME;
-static char *program_version = PACKAGE_NAME " (" PACKAGE_VERSION ") $Id: quant2dali.c 4486 2011-05-09 02:12:20Z chadwick $ (c) GNS 2011 (m.chadwick@gns.cri.nz)";
+static char *program_version = PACKAGE_NAME " (" PACKAGE_VERSION ") (c) GNS 2011 (m.chadwick@gns.cri.nz)";
 static char *program_usage = PACKAGE_NAME " [options] <station> [<server>]";
 static char *program_prefix = "[" PACKAGE_NAME "] ";
 
