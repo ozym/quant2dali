@@ -7,7 +7,7 @@
 #
 VPATH = libq330
 
-CFLAGS += -I. -I./lib330 -DPACKAGE_VERSION=\"1.3.0\"
+CFLAGS += -I. -I./lib330 -DPACKAGE_VERSION=\"1.3.1\"
 
 Q330_HDRS = libarchive.h libclient.h libcmds.h libcompress.h libcont.h libctrldet.h libcvrt.h \
 	    libdetect.h libdss.h libfilters.h liblogs.h libmd5.h libmsgs.h libnetserv.h libopaque.h \
